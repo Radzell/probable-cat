@@ -1,8 +1,7 @@
 import { Router } from 'express';
 
-
 const router = Router();
-const catFile  = require('../catfile.json');
+const catFile = require('../catfile.json');
 
 
 
@@ -16,8 +15,8 @@ router.use('/cats-filtered', (req, res) => {
   const gte = parseInt(req.body.gte)
   const lte = parseInt(req.body.lte)
 
-  
-  res.status(200).json(catFile.filter(cat => parseInt(cat.price) >= gte && parseInt(cat.price) <= lte ))
+
+  res.status(200).json(catFile.filter(cat => parseInt(cat.price) >= gte && parseInt(cat.price) <= lte))
   return
 })
 

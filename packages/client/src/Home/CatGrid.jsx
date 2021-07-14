@@ -11,9 +11,9 @@ import axios from 'axios';
 
 const useStyles = makeStyles((theme) => ({
     paper: {
-      padding: theme.spacing(1),
-      color: theme.palette.text.secondary,
-      height: 200
+        padding: theme.spacing(1),
+        color: theme.palette.text.secondary,
+        height: 200
     },
     image: {
         width: 128,
@@ -51,14 +51,14 @@ const CatData = styled('div')({
     flexDirection: 'column',
 });
 
-export const CatGrid = ({cartCallback}) => {
+export const CatGrid = ({ cartCallback }) => {
 
     const [cats, setCats] = useState([])
 
     useEffect(async () => {
         const result = await axios('/cats')
         setCats(result.data)
-    },[])
+    }, [])
 
     const classes = useStyles();
 
@@ -86,7 +86,7 @@ export const CatGrid = ({cartCallback}) => {
                             </ColumnContainer>
                         </RowContainer>
                     </Paper>
-            </Grid>)}
+                </Grid>)}
             </Grid>
         </Container>
     )

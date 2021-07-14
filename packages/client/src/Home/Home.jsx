@@ -19,11 +19,11 @@ const Home = () => {
   const cartCallback = useCallback((cat) => {
     setSelectedCats((sCats) => {
       return {
-          ...sCats,
-          ...{[cat.id]: cat}
+        ...sCats,
+        ...{ [cat.id]: cat }
       }
     })
-    return 
+    return
   }, [])
 
   const clearCart = useCallback(() => {
