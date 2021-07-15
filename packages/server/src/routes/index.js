@@ -12,11 +12,11 @@ router.use('/cats', (req, res) => {
 
 router.use('/cats-filtered', (req, res) => {
 
-  const gte = parseInt(req.body.gte)
-  const lte = parseInt(req.body.lte)
+  const gte = parseInt(req.query.gte)
+  const lte = parseInt(req.query.lte)
 
 
-  res.status(200).json(catFile.filter(cat => parseInt(cat.price) >= gte && parseInt(cat.price) <= lte))
+  res.status(200).json(catFile.filter(cat => !gte || parseInt(cat.price) >= gte).filter(cat => !lte || parseInt(cat.price) <= lte))
   return
 })
 
